@@ -1,0 +1,61 @@
+.error {
+  color: #af0000;
+}
+
+.info {
+  color: #017969;
+}
+
+.container {
+  flex-basis: 65%;
+  margin: auto;
+}
+
+.page {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,f4f4f4+100 */
+  background: #ffffff; /* Old browsers */
+  background: -moz-linear-gradient(
+    top,
+    #f4f4f4 0%,
+    #fefefe 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    top,
+    #f4f4f4 0%,
+    #fefefe 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #f4f4f4 0%,
+    #fefefe 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#fefefe',GradientType=0 ); /* IE6-9 */
+  padding: 15px;
+}
+
+.panel {
+  background-color: #ffffff;
+  width: inherit;
+  border: 1px solid #cccccc;
+  padding-bottom: 50px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.float-left {
+  float: left;
+}

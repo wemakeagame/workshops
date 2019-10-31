@@ -1,0 +1,76 @@
+.menu {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: -2px 6px 35px -20px rgba(0, 0, 0, 0.27);
+  box-shadow: -2px 6px 35px -20px rgba(0, 0, 0, 0.27);
+}
+
+.menu li {
+  display: flex;
+  background-color: transparent;
+  border-right: 1px solid #c2d2d2;
+}
+
+.menu li a,
+.menu li span,
+.menu li button {
+  text-decoration: none;
+  display: flex;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  height: 100%;
+  padding: 15px;
+  color: white;
+  min-width: 120px;
+  font-size: 0.95em;
+  cursor: pointer;
+}
+
+.menu li a:hover,
+.menu li span:hover,
+.menu li button:hover {
+  font-weight: bold;
+  color: black;
+}
+
+.menu li.hovering:not(:first-of-type) a:not(:hover) {
+  font-weight: bold;
+  color: white;
+}
+
+.menu li.menu-item.hovering > span,
+.menu li.menu-item.hovering > a {
+  font-weight: bold;
+  color: black !important;
+}
+
+.menu li:hover {
+  background-color: #e4f7f7;
+}
+
+.menu .menu-item.hovering .sub-menu {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 60px;
+  flex-basis: 20%;
+}
+
+.menu .menu-item:not(.hovering) .sub-menu {
+  display: none;
+}
+
+.secondary-menu button.btn {
+  background-color: #b84300;
+  border: 0;
+}
+
+.secondary-menu button.btn:hover {
+  color: #ffffff;
+  background-color: #cf4c00;
+}

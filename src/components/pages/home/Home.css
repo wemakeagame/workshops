@@ -1,0 +1,30 @@
+.home-page .workshop-wrapper {
+  display: flex;
+}
+
+.event-display {
+  background-color: #fefefe;
+  margin: 5px;
+  padding: 15px;
+}
+
+.event-display h3 {
+  text-align: left;
+  margin-top: 0;
+  text-transform: uppercase;
+  font-size: 0.8em;
+}
+
+.previous-events {
+  flex-basis: 35%;
+}
+
+.upcomming-events {
+  flex-basis: 65%;
+}
+
+.search-wrapper {
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+}

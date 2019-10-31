@@ -1,0 +1,33 @@
+button.btn {
+  border-radius: 3px;
+  box-shadow: none;
+  border: 1px solid #cccccc;
+  font-family: "Open Sans", sans-serif;
+  padding: 8px;
+  color: #aaaaaa;
+  background-color: #f6f6f6;
+  min-width: 100px;
+}
+
+button.btn:hover {
+  cursor: pointer;
+  background-color: #e1e1e1;
+  color: #000000;
+}
+
+button.btn-primary {
+  color: #ffffff;
+  background-color: #018496;
+  border: 1px solid #006370;
+}
+
+button.btn-primary:hover {
+  color: #ffffff;
+  background-color: #006875;
+  border: 1px solid #006370;
+}
+
+button.btn-link {
+  background: transparent;
+  border: none;
+}

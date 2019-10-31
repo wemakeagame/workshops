@@ -1,0 +1,25 @@
+nav {
+  display: flex;
+  z-index: 5;
+  background-color: #018496;
+  -webkit-box-shadow: -2px 6px 15px -5px rgba(0, 0, 0, 0.1);
+  box-shadow: -2px 6px 15px -5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+}
+
+nav .title {
+  padding: 0 20px;
+  color: #ffffff;
+}
+
+nav + .menu {
+  height: 100%;
+}
+
+nav > div {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+  justify-content: space-between;
+}

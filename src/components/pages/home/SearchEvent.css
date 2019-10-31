@@ -1,0 +1,14 @@
+.search-box {
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+  flex-basis: 30%;
+}
+
+.search-box input {
+  flex-basis: 80%;
+}
+
+.search-box button {
+  flex-basis: 20%;
+}
