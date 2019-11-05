@@ -10,7 +10,7 @@ export default class PasswordField extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="form-group">
         <label>{this.props.label}</label>
         <div>
           <input

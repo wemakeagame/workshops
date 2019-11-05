@@ -3,7 +3,7 @@ import Login from "../pages/login/Login";
 import RegisterUser from "../pages/user/RegisterUser";
 import Workshop from "../pages/workshop/Workshop";
 
-import { AUTH, ROLES } from "./authorization";
+import { ROLES } from "./authorization";
 import NonAuthorized from "../shared/NonAuthorized";
 import NotFound from "../shared/NotFound";
 

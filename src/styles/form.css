@@ -7,3 +7,28 @@ input {
 input::placeholder {
   color: #cccccc;
 }
+
+.compact-form {
+  max-width: 50%;
+}
+
+.form .form-group {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+}
+
+.form .form-group label {
+  text-align: left;
+}
+.form .form-group div {
+  display: flex;
+}
+
+.form .form-group div input {
+  flex-basis: 100%;
+}
+
+.form {
+  padding: 20px;
+}

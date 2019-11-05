@@ -9,6 +9,7 @@
 .container {
   flex-basis: 65%;
   margin: auto;
+  flex-wrap: wrap;
 }
 
 .page {
@@ -58,4 +59,14 @@
 
 .float-left {
   float: left;
+}
+
+a {
+  color: #af4600;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #d85803;
+  text-decoration: underline;
 }

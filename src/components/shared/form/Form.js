@@ -16,7 +16,25 @@ export default class LoginForm extends React.Component {
   }
 
   onChange = e => {
-    this.props.onChange(e);
+    const input = this.props.form[e.target.name];
+    input.value = e.target.value;
+
+    input.isValid = null;
+
+    if (input && input.validators && input.validators.length) {
+      input.validators.forEach(val => {
+        if (typeof val === "function") {
+          if (input.isValid) {
+            let newValidation = val(input.value);
+            input.isValid.valid = input.isValid.valid && newValidation.valid;
+          } else {
+            input.isValid = val(input.value);
+          }
+        }
+      });
+    }
+
+    this.props.onChange(e, this.isFormValid());
   };
 
   onSubmit = () => {
@@ -30,6 +48,29 @@ export default class LoginForm extends React.Component {
     this.props.onSubmit(formValues);
   };
 
+  isFormValid = () => {
+    let isValid = true;
+
+    for (let key in this.props.form) {
+      let input = this.props.form[key];
+      isValid =
+        isValid && ((input.isValid && input.isValid.valid) || !input.isValid);
+      isValid =
+        isValid &&
+        ((this.isRequired(input) && input.value) || !this.isRequired(input));
+    }
+
+    return isValid;
+  };
+
+  isRequired = input => {
+    return (
+      input &&
+      input.validators &&
+      input.validators.find(v => v.name === "requiredValidation")
+    );
+  };
+
   render() {
     const inputs = Object.keys(this.props.form)
       .map(key => {
@@ -38,19 +79,25 @@ export default class LoginForm extends React.Component {
         return (
           Cmp &&
           input.type && (
-            <Cmp
-              label={input.label}
-              name={key}
-              value={input.value}
-              onChange={this.onChange}
-              onSubmit={this.onSubmit}
-              key={key}
-            />
+            <React.Fragment>
+              <Cmp
+                label={input.label}
+                name={key}
+                value={input.value}
+                onChange={this.onChange}
+                onSubmit={this.onSubmit}
+                disabled={input.disabled}
+                required={this.isRequired(input)}
+                key={key}
+              />
+              <p className="error">{input.isValid && input.isValid.msg}</p>
+              <p className="error">{input.error}</p>
+            </React.Fragment>
           )
         );
       })
       .filter(i => i);
 
-    return <div className="form">{inputs}</div>;
+    return <div className={"form " + this.props.className}>{inputs}</div>;
   }
 }

@@ -8,8 +8,11 @@ button.btn {
   background-color: #f6f6f6;
   min-width: 100px;
 }
+button.btn:disabled {
+  opacity: 0.6;
+}
 
-button.btn:hover {
+button.btn:hover:not(:disabled) {
   cursor: pointer;
   background-color: #e1e1e1;
   color: #000000;
@@ -21,7 +24,7 @@ button.btn-primary {
   border: 1px solid #006370;
 }
 
-button.btn-primary:hover {
+button.btn-primary:hover:not(:disabled) {
   color: #ffffff;
   background-color: #006875;
   border: 1px solid #006370;
