@@ -5,7 +5,8 @@ const users = [
     email: "test@test.com",
     name: "Test",
     surname: "Test",
-    role: "user"
+    role: "user",
+    id: 0
   }
 ];
 

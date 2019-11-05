@@ -4,7 +4,9 @@ import "./Footer.css";
 export default class Footer extends React.Component {
   render() {
     return (
-      <footer>Workshops Online &copy; - {new Date().getFullYear()}</footer>
+      <footer>
+        <p>Workshops Online &copy; - {new Date().getFullYear()}</p>
+      </footer>
     );
   }
 }

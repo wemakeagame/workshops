@@ -2,7 +2,6 @@ import React from "react";
 import InputText from "../../shared/form/InputText";
 import SubmitButton from "./SubmitButton";
 
-import "./Form.css";
 import PasswordField from "./PasswordField";
 
 export default class LoginForm extends React.Component {
@@ -67,7 +66,7 @@ export default class LoginForm extends React.Component {
     return (
       input &&
       input.validators &&
-      input.validators.find(v => v.name === "requiredValidation")
+      !!input.validators.find(v => v.name === "requiredValidation")
     );
   };
 

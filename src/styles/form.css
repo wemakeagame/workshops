@@ -8,6 +8,11 @@ input::placeholder {
   color: #cccccc;
 }
 
+.form .form-group label.required::after {
+  content: "*";
+  color: #cc0000;
+}
+
 .compact-form {
   max-width: 50%;
 }
@@ -31,4 +36,12 @@ input::placeholder {
 
 .form {
   padding: 20px;
+}
+
+.form button {
+  margin: 5px;
+}
+
+.form label {
+  line-height: 3em;
 }

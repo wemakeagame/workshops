@@ -3,6 +3,9 @@ footer {
   bottom: 0;
   background-color: #018496;
   width: 100%;
-  padding: 5px;
   color: #ffffff;
+}
+
+.footer p {
+  padding: 5px;
 }
