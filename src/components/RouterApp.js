@@ -12,7 +12,7 @@ class RouterApp extends React.Component {
     super(props);
     this.state = {
       headerRoutes: this.getHeaderRoutes(),
-      routes: routingConfig.RoutingPaths,
+      routes: { ...routingConfig.RoutingPaths },
       isAuthenticated: auth.isAuthenticated()
     };
   }
@@ -20,7 +20,16 @@ class RouterApp extends React.Component {
   login = form => {
     auth.login(form, isAuth => {
       if (isAuth) {
-        this.setState({ isAuthenticated: isAuth });
+        const headerRoutes = [...this.state.headerRoutes];
+
+        headerRoutes
+          .find(r => r.path === "/user")
+          .children.forEach(route => {
+            let userData = auth.getUserData();
+            route.resolvedPath = route.path.replace(/:id/g, userData.id);
+          });
+
+        this.setState({ isAuthenticated: isAuth, headerRoutes: headerRoutes });
         this.props.history.push("/");
       } else {
         this.setState({ errorMsg: "Username or passoword wrong!" });
@@ -73,7 +82,11 @@ class RouterApp extends React.Component {
 
     return (
       RouteCmp && (
-        <PrivateRoute exact path={route.path} key={route.path}>
+        <PrivateRoute
+          exact={route.path === "/"}
+          path={route.path}
+          key={route.path}
+        >
           <RouteCmp
             action={this.handleAction}
             errorMsg={this.state.errorMsg}
@@ -98,7 +111,7 @@ class RouterApp extends React.Component {
   }
 
   getHeaderRoutes = () => {
-    let { home, login, workshop, user } = routingConfig.RoutingPaths;
+    let { home, login, workshop, user } = { ...routingConfig.RoutingPaths };
 
     return routeUtils.parsePath([home, workshop, user, login]);
   };

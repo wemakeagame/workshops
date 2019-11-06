@@ -6,7 +6,16 @@ const users = [
     name: "Test",
     surname: "Test",
     role: "user",
-    id: 0
+    id: "0"
+  },
+  {
+    username: "a",
+    password: "a",
+    email: "test@test.com",
+    name: "Test",
+    surname: "Test",
+    role: "user",
+    id: "1"
   }
 ];
 

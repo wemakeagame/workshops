@@ -41,6 +41,7 @@ export default class LoginForm extends React.Component {
         onChange={this.onChange}
         onSubmit={this.onSubmit}
         className="panel"
+        name="login-form"
       />
     );
   }

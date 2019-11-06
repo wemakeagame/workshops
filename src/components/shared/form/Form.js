@@ -72,7 +72,7 @@ export default class LoginForm extends React.Component {
 
   render() {
     const inputs = Object.keys(this.props.form)
-      .map(key => {
+      .map((key, i) => {
         const input = this.props.form[key];
         const Cmp = this.cmpMapping[input.type];
         return (
@@ -87,7 +87,7 @@ export default class LoginForm extends React.Component {
                 onSubmit={this.onSubmit}
                 disabled={input.disabled}
                 required={this.isRequired(input)}
-                key={key}
+                key={key + i + this.props.name}
               />
               <p className="error">{input.isValid && input.isValid.msg}</p>
               <p className="error">{input.error}</p>

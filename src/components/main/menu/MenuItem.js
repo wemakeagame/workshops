@@ -25,7 +25,9 @@ export default class MenuItem extends React.Component {
 
   render() {
     let link = !this.state.menu.shouldNotRedirect ? (
-      <Link to={this.state.menu.path}>{this.state.menu.description}</Link>
+      <Link to={this.state.menu.resolvedPath || this.state.menu.path}>
+        {this.state.menu.description}
+      </Link>
     ) : (
       <span>{this.state.menu.description}</span>
     );
