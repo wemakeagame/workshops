@@ -36,7 +36,11 @@ export default class LoginForm extends React.Component {
     this.props.onChange(e, this.isFormValid());
   };
 
-  onSubmit = () => {
+  onSubmit = e => {
+    if (e) {
+      e.preventDefault && e.preventDefault();
+    }
+
     const formValues = {};
     Object.keys(this.props.form).forEach(key => {
       const value = this.props.form[key].value;
@@ -78,7 +82,7 @@ export default class LoginForm extends React.Component {
         return (
           Cmp &&
           input.type && (
-            <React.Fragment>
+            <form onSubmit={this.onSubmit}>
               <Cmp
                 label={input.label}
                 name={key}
@@ -91,7 +95,7 @@ export default class LoginForm extends React.Component {
               />
               <p className="error">{input.isValid && input.isValid.msg}</p>
               <p className="error">{input.error}</p>
-            </React.Fragment>
+            </form>
           )
         );
       })

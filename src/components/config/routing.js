@@ -7,6 +7,7 @@ import { ROLES } from "./authorization";
 import NonAuthorized from "../shared/NonAuthorized";
 import NotFound from "../shared/NotFound";
 import UserDetail from "../pages/user/UserDetail";
+import UserEdit from "../pages/user/UserEdit";
 
 const RoutingPaths = {
   home: { path: "/", description: "Home", component: Home },
@@ -34,7 +35,8 @@ const RoutingPaths = {
         edit: {
           path: "/edit/:id",
           description: "Edit",
-          authorization: ROLES.USER
+          authorization: ROLES.USER,
+          component: UserEdit
         }
       }
     ],

@@ -1,5 +1,7 @@
 .error {
   color: #af0000;
+  margin: 0;
+  margin-top: 3px;
 }
 
 .info {

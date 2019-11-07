@@ -1,0 +1,28 @@
+.user-detail-page .details div {
+  flex-basis: 100%;
+  border: 1px dashed #cccccc;
+  margin: 5px;
+  padding: 15px;
+  background-color: #f8f8f8;
+}
+.user-detail-page .details {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.user-detail-page .panel .panel {
+  width: 50%;
+  margin: auto;
+}
+
+.user-detail-page .details label {
+  display: flex;
+  font-weight: bold;
+  font-size: 0.8em;
+}
+
+.user-detail-page .details p {
+  text-align: left;
+  margin: 0;
+}

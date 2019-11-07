@@ -15,6 +15,7 @@ input::placeholder {
 
 .compact-form {
   max-width: 50%;
+  margin: auto;
 }
 
 .form .form-group {

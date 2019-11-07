@@ -6,6 +6,7 @@ export default function SubmitButton(props) {
       className="btn btn-primary"
       onClick={() => props.onSubmit(props.name)}
       disabled={props.disabled}
+      type="submit"
     >
       {props.label}
     </button>

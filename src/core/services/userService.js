@@ -11,7 +11,7 @@ export function getUserById(id, callback) {
     } else {
       callback({ message: "Id is missing" });
     }
-  }, 2000);
+  }, 500);
 }
 
 export function addUser(data, callback) {
@@ -36,9 +36,55 @@ export function addUser(data, callback) {
     } else {
       callback({ message: "no user data to add" });
     }
-  }, 2000);
+  }, 500);
 }
 
-export function updateUser(data, callback) {}
+export function updateUser(data, callback) {
+  setTimeout(() => {
+    if (data) {
+      const user = users.find(u => data.id === u.id);
 
-module.exports = { getUsers, addUser, updateUser, getUserById };
+      if (!user && callback) {
+        callback({ message: "User doesn't exist" });
+      }
+
+      if (user) {
+        for (let key in data) {
+          user[key] = data[key];
+        }
+      }
+
+      if (callback) {
+        callback(null, user);
+      }
+    } else {
+      callback({ message: "no user data to add" });
+    }
+  }, 500);
+}
+
+export function updatePassword(data, callback) {
+  setTimeout(() => {
+    if (data) {
+      const user = users.find(
+        u => data.id === u.id && data.oldPassword === u.password
+      );
+
+      if (!user && callback) {
+        callback({ message: "User doesn't exist" });
+      }
+
+      if (user) {
+        user.password = data.newPassword;
+      }
+
+      if (callback) {
+        callback(null, user);
+      }
+    } else {
+      callback({ message: "no user data to add" });
+    }
+  }, 500);
+}
+
+module.exports = { getUsers, addUser, updateUser, getUserById, updatePassword };
