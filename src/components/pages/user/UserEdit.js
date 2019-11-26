@@ -9,6 +9,7 @@ import {
 import { withRouter } from "react-router";
 import Loading from "../../shared/Loading";
 import auth from "../../../core/auth";
+import Page from "../../shared/Page";
 
 class UserEdit extends React.Component {
   constructor(props) {
@@ -97,14 +98,14 @@ class UserEdit extends React.Component {
       </React.Fragment>
     );
     return (
-      <div className="page container">
+      <Page>
         <h3>Edit My Info</h3>
         {this.state.message && <h2 className="info">{this.state.message}</h2>}
         {this.state.errorMsg && (
           <h2 className="error">{this.state.errorMsg}</h2>
         )}
         {this.state.isLoading ? loading : content}
-      </div>
+      </Page>
     );
   }
 }

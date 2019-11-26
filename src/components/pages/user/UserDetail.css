@@ -11,7 +11,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.user-detail-page .panel .panel {
+.user-detail-page .panel {
   width: 50%;
   margin: auto;
 }

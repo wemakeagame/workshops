@@ -47,7 +47,8 @@ export default class RegisterForm extends React.Component {
         submitRegister: {
           type: "submit",
           label: "Register",
-          disabled: true
+          disabled: true,
+          alignment: "text-center"
         }
       }
     };

@@ -4,6 +4,8 @@ import { getUserById } from "../../../core/services/userService";
 import { withRouter } from "react-router";
 
 import "./UserDetail.css";
+import Page from "../../shared/Page";
+import Panel from "../../shared/Panel";
 
 class UserDetail extends React.Component {
   constructor(props) {
@@ -40,7 +42,7 @@ class UserDetail extends React.Component {
     ) : (
       <div>
         <h3>My details</h3>
-        <div className="panel">
+        <Panel>
           <div className="details">
             <div>
               <label>Name</label>
@@ -57,24 +59,26 @@ class UserDetail extends React.Component {
               <p>{this.state.userData.email}</p>
             </div>
           </div>
-          <button
-            className="btn btn-primary"
-            onClick={() =>
-              this.props.history.push("/user/edit/" + this.state.userData.id)
-            }
-          >
-            Edit
-          </button>
-        </div>
+          <div className="text-center">
+            <button
+              className="btn btn-primary"
+              onClick={() =>
+                this.props.history.push("/user/edit/" + this.state.userData.id)
+              }
+            >
+              Edit
+            </button>
+          </div>
+        </Panel>
       </div>
     );
 
     const loading = <Loading />;
 
     return (
-      <div className="user-detail-page container page">
-        <div className="panel">{this.state.isLoading ? loading : details}</div>
-      </div>
+      <Page className="user-detail-page">
+        {this.state.isLoading ? loading : details}
+      </Page>
     );
   }
 }

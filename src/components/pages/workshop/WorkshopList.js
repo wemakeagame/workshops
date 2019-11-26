@@ -1,7 +1,7 @@
 import React from "react";
-import ListItem from "./ListItem";
+import WorkshopListItem from "./WorkshopListItem";
 
-export default class ListEvent extends React.Component {
+export default class WorkshopList extends React.Component {
   constructor(props) {
     super();
 
@@ -11,8 +11,8 @@ export default class ListEvent extends React.Component {
   }
 
   render() {
-    const listItems = this.state.items.map((item, i) => (
-      <ListItem
+    const listItems = this.props.items.map((item, i) => (
+      <WorkshopListItem
         item={item}
         key={"itemList" + i}
         maxChar={this.props.maxChar || 250}

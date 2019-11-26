@@ -1,0 +1,17 @@
+.details label {
+  font-weight: bold;
+  font-size: 0.8em;
+}
+
+.details {
+  line-height: 1;
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.details div {
+  border: 1px dotted #dedede;
+  margin: 5px;
+  padding: 10px;
+}

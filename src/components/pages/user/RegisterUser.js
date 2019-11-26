@@ -3,6 +3,8 @@ import RegisterForm from "./RegisterForm";
 import { addUser } from "../../../core/services/userService";
 import { Link } from "react-router-dom";
 import Loading from "../../shared/Loading";
+import Page from "../../shared/Page";
+import Panel from "../../shared/Panel";
 
 export default class RegisterUser extends React.Component {
   hasRegistered = false;
@@ -39,7 +41,9 @@ export default class RegisterUser extends React.Component {
   render() {
     const form = (
       <React.Fragment>
-        <p>Please fill all required fields in order to register</p>
+        <h3 className="text-center">
+          Please fill all required fields in order to register
+        </h3>
         <RegisterForm action={this.register} errorMsg={this.state.errorMsg} />
       </React.Fragment>
     );
@@ -56,9 +60,9 @@ export default class RegisterUser extends React.Component {
     const content = this.state.hasRegistered ? afterRegister : form;
 
     return (
-      <div className="login-page container page">
-        <div className="panel">{this.state.isLoading ? loading : content}</div>
-      </div>
+      <Page className="login-page">
+        {this.state.isLoading ? loading : content}
+      </Page>
     );
   }
 }

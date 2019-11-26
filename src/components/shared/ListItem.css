@@ -1,12 +1,12 @@
 .info-wrapper {
   display: flex;
   flex-direction: column;
-  flex-basis: 100%;
+  /* flex-basis: 100%; */
 }
 
 .list-item {
   display: flex;
-  flex-basis: 100%;
+  /* flex-basis: 100%; */
   background-color: #f9f9f9;
   padding: 5px;
   border-bottom: 1px solid #cccccc;
@@ -14,15 +14,26 @@
   border-radius: 0 0 5px 30px;
 }
 
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
 .image {
   max-height: 150px;
   min-width: 150px;
   overflow: hidden;
-  flex-basis: 30%;
+  /* flex-basis: 30%; */
   align-self: center;
   opacity: 0.6;
   border-radius: 5px 30px;
   margin-left: 5px;
+  width: 150px;
+}
+
+.image img {
+  max-height: 100%;
+  width: auto;
 }
 
 .list-item:hover {

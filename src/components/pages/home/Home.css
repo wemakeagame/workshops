@@ -1,5 +1,13 @@
 .home-page .workshop-wrapper {
-  display: flex;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-auto-flow: row dense;
+}
+
+@media only screen and (max-width: 1000px) {
+  .home-page .workshop-wrapper {
+    grid-template-columns: 1fr;
+  }
 }
 
 .event-display {
@@ -13,14 +21,6 @@
   margin-top: 0;
   text-transform: uppercase;
   font-size: 0.8em;
-}
-
-.previous-events {
-  flex-basis: 35%;
-}
-
-.upcomming-events {
-  flex-basis: 65%;
 }
 
 .search-wrapper {

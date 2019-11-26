@@ -1,16 +1,12 @@
 import React from "react";
-import { eventListMockData } from "./Home.mock";
 import ListEvent from "../../shared/ListEvent";
+import { workshops } from "../../../core/workshop.mock";
 
 export default function PreviousEvents(props) {
   return (
     <div className="previous-events event-display">
       <h3>Previous Events</h3>
-      <ListEvent
-        items={eventListMockData}
-        maxChar={props.maxChar}
-        showImage={false}
-      />
+      <ListEvent items={workshops} maxChar={props.maxChar} showImage={false} />
     </div>
   );
 }

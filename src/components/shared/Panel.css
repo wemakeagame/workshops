@@ -1,0 +1,38 @@
+.panel-title {
+  font-weight: 800;
+  padding: 10px;
+  border-bottom: 1px solid #eeeeee;
+  font-size: 0.8em;
+  background-color: #fbfbfb;
+  text-align: left;
+}
+
+.panel-body {
+  border-bottom: 1px dotted #eeeeee;
+  padding: 15px;
+  text-align: left;
+}
+
+.panel .panel {
+  margin: 20px;
+}
+
+.panel {
+  background-color: #ffffff;
+  width: inherit;
+  border: 1px solid #cccccc;
+  margin-bottom: 10px;
+}
+
+.panel.collapsable {
+  cursor: pointer;
+}
+
+.panel .panel.collapsable {
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+.panel .panel.collapsable .panel-title {
+  background-color: #f1f1f1;
+}

@@ -1,0 +1,10 @@
+.wrs-banner img {
+  width: 100%;
+  height: auto;
+}
+
+.wrs-banner {
+  max-height: 200px;
+  width: 100%;
+  overflow: hidden;
+}

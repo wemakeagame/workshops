@@ -82,7 +82,7 @@ export default class LoginForm extends React.Component {
         return (
           Cmp &&
           input.type && (
-            <form onSubmit={this.onSubmit}>
+            <React.Fragment>
               <Cmp
                 label={input.label}
                 name={key}
@@ -91,16 +91,20 @@ export default class LoginForm extends React.Component {
                 onSubmit={this.onSubmit}
                 disabled={input.disabled}
                 required={this.isRequired(input)}
+                alignment={input.alignment}
                 key={key + i + this.props.name}
               />
               <p className="error">{input.isValid && input.isValid.msg}</p>
               <p className="error">{input.error}</p>
-            </form>
+            </React.Fragment>
           )
         );
       })
       .filter(i => i);
-
-    return <div className={"form " + this.props.className}>{inputs}</div>;
+    return (
+      <div className={"form " + this.props.className}>
+        <form onSubmit={this.onSubmit}>{inputs}</form>
+      </div>
+    );
   }
 }

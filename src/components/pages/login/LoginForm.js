@@ -1,5 +1,6 @@
 import React from "react";
 import Form from "../../shared/form/Form";
+import requiredValidation from "../../shared/form/validation/required";
 
 export default class LoginForm extends React.Component {
   constructor(props) {
@@ -9,16 +10,20 @@ export default class LoginForm extends React.Component {
         username: {
           type: "text",
           label: "Username",
-          value: ""
+          value: "",
+          validators: [requiredValidation]
         },
         password: {
           type: "password",
           label: "Password",
-          value: ""
+          value: "",
+          validators: [requiredValidation]
         },
         submitLogin: {
           type: "submit",
-          label: "Login"
+          label: "Login",
+          disabled: true,
+          alignment: "text-center"
         }
       }
     };
@@ -28,9 +33,10 @@ export default class LoginForm extends React.Component {
     this.props.action("submitLogin", form);
   };
 
-  onChange = e => {
+  onChange = (e, isFormValid) => {
     const loginForm = { ...this.state.loginForm };
     loginForm[e.target.name].value = e.target.value;
+    loginForm.submitLogin.disabled = !isFormValid;
     this.setState({ loginForm: loginForm });
   };
 
