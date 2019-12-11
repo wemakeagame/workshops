@@ -8,6 +8,7 @@ import NonAuthorized from "../shared/NonAuthorized";
 import NotFound from "../shared/NotFound";
 import UserDetail from "../pages/user/UserDetail";
 import UserEdit from "../pages/user/UserEdit";
+import WorkshopDetail from "../pages/workshop/WorkshopDetail";
 
 const RoutingPaths = {
   home: { path: "/", description: "Home", component: Home },
@@ -45,7 +46,13 @@ const RoutingPaths = {
   workshop: {
     path: "/workshop",
     children: [
-      { details: { path: "/detail/:id", description: "See Details" } },
+      {
+        detail: {
+          path: "/detail/:id",
+          description: "See Details",
+          component: WorkshopDetail
+        }
+      },
       { add: { path: "/add", description: "Add new" } },
       { edit: { path: "/edit/:id", description: "Edit" } }
     ],

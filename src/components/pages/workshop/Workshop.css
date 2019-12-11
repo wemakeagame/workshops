@@ -8,3 +8,7 @@
   width: 100%;
   overflow: hidden;
 }
+
+.actions button {
+  margin:5px;
+}

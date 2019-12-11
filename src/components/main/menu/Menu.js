@@ -38,10 +38,6 @@ class Menu extends React.Component {
         }
       }
 
-      if (menu.path === "/workshop") {
-        menu.shouldNotRedirect = true;
-      }
-
       return (
         <MenuItem
           menu={menu}

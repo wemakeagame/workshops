@@ -22,7 +22,7 @@ export const workshops = (function() {
 
   for (let i = 1; i < 10; i++) {
     let newItem = { ...sampleItem };
-    newItem.id = i;
+    newItem.id = i.toString();
     newItem.title += i;
     newItem.image += "&cache" + i;
     newItem.status = getRandomStatus();

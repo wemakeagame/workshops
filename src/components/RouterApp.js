@@ -83,7 +83,7 @@ class RouterApp extends React.Component {
     return (
       RouteCmp && (
         <PrivateRoute
-          exact={route.path === "/"}
+          exact={!route.path.includes(":")}
           path={route.path}
           key={route.path}
         >

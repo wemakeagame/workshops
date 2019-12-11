@@ -12,3 +12,16 @@ export function getMyWorkshops(user, callback) {
     }
   }, 500);
 }
+
+export function getMyWorkshopById(id, callback) {
+  setTimeout(() => {
+    if (id) {
+      const ws = workshops.find(w => w.id === id);
+      if (callback) {
+        callback(null, ws);
+      }
+    } else {
+      callback({ message: "Id is missing" });
+    }
+  }, 500);
+}
